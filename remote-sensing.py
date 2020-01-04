@@ -22,7 +22,7 @@ def thermal_filter(img, g, r, tir):
         for width in range(len(img[0])):
             img[height][width][2] = g[height][width][1]
             img[height][width][1] = r[height][width][0]
-            if(tir[height][width][0] >= 195):
+            if(tir[height][width][0] >= 200):
                 img[height][width][0] = tir[height][width][0]
 
 
