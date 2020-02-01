@@ -16,13 +16,15 @@ array_tir19 = np.array(tir19, dtype=np.uint8)
 # Result Image
 image_array = array_red19
 
+# threshold value on thermal band
+thres = 200
 
-def thermal_filter(img, g, r, tir):
+def thermal_filter(img, g, r, tir, thres):
     for height in range(len(img)):
         for width in range(len(img[0])):
             img[height][width][2] = g[height][width][1]
             img[height][width][1] = r[height][width][0]
-            if(tir[height][width][0] >= 200):
+            if(tir[height][width][0] >= thres):
                 img[height][width][0] = tir[height][width][0]
 
 
